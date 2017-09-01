@@ -2,34 +2,40 @@
 using namespace std;
 
 int main() {
-    int usPopulation = 0;
+    int currentPopulation = 0;
     int numYears = 0;
+    
+    int numBirthSec = 0;
+    int numDeathSec = 0;
+    
+    int numDeathYear = 0;
+    int numBirthYear = 0;
+    
     int numBirthsTotal = 0;
     int numDeathsTotal = 0;
-    int totalPopulation = 0;
+    int futurePopulation = 0;
     
-    usPopulation = 325777400;
+    cout << "Enter population: ";
+    cin >> currentPopulation;
     
-    cout << "Current U.S. Population " << usPopulation << endl;
+    cout << "Enter Birth Per Second: ";
+    cin >> numDeathSec;
     
-    cout << "How will the U.S. Population be affected in the next couple of years?" << endl;
+     cout << "Enter Death Per Second: ";
+    cin >> numDeathSec;
     
-    cout << "Enter number of years: " << endl;
+    numBirthYear = numBirthSec * 60* 60 *24 * 365;
+    numDeathYear = numDeathSec * 60* 60 *24 * 365;
+    
+    cout << "Number of years predicted: ";
     cin >> numYears;
     
-    cout << "In the next " << numYears << " years." << endl;
+    cout << "In the next " << numYears << " years the total population will be: " << endl;
     
-    numBirthsTotal = numYears * 3942000;
+    numBirthsTotal = numYears * numBirthYear;
+    numDeathsTotal = numYears * numDeathYear;
     
-    cout << "A total of " << numBirthsTotal << " will be born." << endl;
-    
-    numDeathsTotal = numYears * 2628000;
-    
-    cout << "A total of " << numDeathsTotal << " will die." << endl;;
-    
-    totalPopulation = (usPopulation - numDeathsTotal) + numBirthsTotal;
-    
-    cout << "And the new U.S. Population will be " << totalPopulation << "." << endl;
-    
+    futurePopulation = currentPopulation - numDeathsTotal + numBirthsTotal;
+    cout << futurePopulation;
     return 0;
 }
