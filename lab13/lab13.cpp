@@ -35,7 +35,7 @@ int main() {
     numBirthsTotal = numYears * numBirthYear;
     numDeathsTotal = numYears * numDeathYear;
     
-    futurePopulation = currentPopulation - numDeathsTotal + numBirthsTotal;
+    futurePopulation = (currentPopulation - numDeathsTotal) + numBirthsTotal;
     cout << futurePopulation;
     return 0;
 }
