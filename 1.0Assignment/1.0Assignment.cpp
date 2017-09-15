@@ -1,6 +1,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
+/*Roque Guerrero
+  9/14/2017
+  Code on how to calculate your pay stub
+*/
+
 
 /*This object has the variable to help calculate
 how much money employee will recievd for the miles they traveled.
