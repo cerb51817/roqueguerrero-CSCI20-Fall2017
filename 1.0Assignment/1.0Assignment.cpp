@@ -19,7 +19,7 @@ int main() {
     
     employee_mileage mileage_traveled;
     
-    //This our the ouput variables
+    //These are the output variables
     string first_name;
     string last_name;
     char money_sign = '$';
@@ -31,7 +31,7 @@ int main() {
     double money_after_deduction = 0.0;
     double taxes = 17e-2;
     
-    //This are all the input that we ask the user to enter.
+    //This are all the input variables that we ask the user to enter.
     cout << "Enter first name:";
     getline(cin, first_name);
     cout << endl;
@@ -69,7 +69,7 @@ int main() {
     
     deduction_total = (total_money * taxes) + insurance_pay;
     
-    money_after_deduction = total_money - mileage_traveled.mileage_reimbursement;
+    money_after_deduction = total_money - deduction_total;
     
     //This will show what the user entered
     cout << "Name: " << first_name << " " << last_name;
@@ -100,12 +100,40 @@ int main() {
 }
 
 /*
-Name: Roque Guerrero
+Name: Sofia Cameron
 Rate: $23.57
 Hours: 40
 Miles Traveled: 886
 Mileage Reimbursement: $310.1
 Current Total: $942.8
 Current Deductions: $338.926
-Net Pay: $632.7
+Net Pay: $603.874
+
+Name: Richard Watson
+Rate: $11.5
+Hours: 29
+Miles Traveled: 938
+Mileage Reimbursement: $328.3
+Current Total: $333.5
+Current Deductions: $401.265
+Net Pay: $-67.765
+
+Name: Heather Hun
+Rate: $60
+Hours: 35
+Miles Traveled: 0
+Mileage Reimbursement: $0
+Current Total: $2100
+Current Deductions: $581.75
+Net Pay: $1518.25
+
+Name: Eddy Hall
+Rate: $8.25
+Hours: 40
+Miles Traveled: 227
+Mileage Reimbursement: $79.45
+Current Total: $330
+Current Deductions: $236.37
+Net Pay: $93.63
+
 */
