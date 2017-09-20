@@ -11,14 +11,14 @@ using namespace std;
 
 int main() {
     
-    //variables
+    //output varirables
     double wind_speed = 0;
     double temp_f = 0;
     double old_style_wind_chill = 0;
     double new_style_wind_chill = 0;
     double difference = 0;
     
-    //input variables
+    //input variables ask to the entered
     cout << "Enter temperature: ";
     cin >> temp_f;
     cout << endl;
@@ -32,7 +32,7 @@ int main() {
     new_style_wind_chill = 35.74 + 0.6215 * temp_f - 35.75 * (pow(wind_speed,0.16)) + 0.4275 * temp_f * pow(wind_speed,0.16);
     difference = old_style_wind_chill - new_style_wind_chill;
     
-    //output variables
+    //shows final calculation based off what was entered
     cout << "Wind Speed: " << wind_speed << endl;
     cout << "Old Formula: " << old_style_wind_chill << endl;
     cout << "New Formula: " << new_style_wind_chill << endl;
