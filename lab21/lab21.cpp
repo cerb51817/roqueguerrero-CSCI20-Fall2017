@@ -36,7 +36,7 @@ int main() {
     cout << "Wind Speed: " << wind_speed << endl;
     cout << "Old Formula: " << old_style_wind_chill << endl;
     cout << "New Formula: " << new_style_wind_chill << endl;
-    cout << "Difference: " << difference << endl;
+    cout << "Difference: " << abs(difference) << endl;
     
     
     
@@ -54,10 +54,10 @@ Difference: 4.8083
 Wind Speed: 10
 Old Formula: 27.8601
 New Formula: 32.713
-Difference: -4.85286
+Difference: 4.85286
 
 Old Formula: 98.7538
 New Formula: 105.711
-Difference: -6.95719
+Difference: 6.95719
 
 */
