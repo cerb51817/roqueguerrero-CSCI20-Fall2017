@@ -13,15 +13,14 @@ int main() {
     
     //random number generating function
     srand(time(0));
-    cout << (rand() % 100) + 1 << endl;
-    
+    cout << "Random Number: " << (rand() % 100) + 1 << endl;
   
     return 0;
 }
 /*
 
-first run: 23
-second run: 17
-third run: 84
+Random Number: 23
+Random Number: 17
+Random Number: 84
 
 */
