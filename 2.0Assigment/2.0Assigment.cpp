@@ -174,8 +174,6 @@ int main() {
     purchase5.SetSaleTaxCity(0.01);
     purchase5.PrintFunction();
     
-    
-    
     return 0;
 }
 /*
