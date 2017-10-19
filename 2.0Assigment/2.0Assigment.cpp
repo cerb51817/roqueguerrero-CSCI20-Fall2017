@@ -8,8 +8,10 @@ using namespace std;
 /*Roque Guerrero
   10/5/2017
   2.0 Assigment - Class Conversion Calculators
+  This program will calculate the tax of an item in both city, county, and state base of the price of the item.
+  Zachary Rust help me with this project.
 */
-
+//This is the class function for the sale tax. It has all the variable that I will used.
 class SaleTax {  
     //Mutator
     private:                                
@@ -79,7 +81,7 @@ class SaleTax {
      
  };
  
-//Prints all the taxes for state, county, city, and special
+//This functiton will prints all the taxes for each city, county, and state.
 void SaleTax::Print()
 {
  cout.setf(ios::fixed); 
@@ -120,7 +122,7 @@ void SaleTax::Print()
 int main(){
  
  
- cout.setf(ios::fixed); //Sets decimal percicion to 2 places
+ cout.setf(ios::fixed); //This part of code sets decimal to 2 places to the left.
  
  
  double price;
@@ -199,7 +201,7 @@ int main(){
 }
 
 
-//Function for Chico
+//This get function will get the taxes for city, county, and state for Chico Area.
 double SaleTax::GetChicoState()
 {
  return chico_state;
@@ -222,7 +224,7 @@ double SaleTax::GetChicoSpecial()
 }
 
 
-//Function for Paradise
+//This get function will get the taxes for city, county, and state for Paradise Area.
 double SaleTax::GetParadiseState()
 {
  return paradise_state;
@@ -244,7 +246,7 @@ double SaleTax::GetParadiseSpecial()
 }
 
 
-//Function for Sacramento
+//This get function will get the taxes for city, county, and state for Sacramento area.
 double SaleTax::GetSacState()
 {
  return sac_state;
@@ -265,7 +267,7 @@ double SaleTax::GetSacSpecial()
  return sac_special;
 }
 
-//Function for Las Vegas
+//This get function will get the taxes for city, county, and state for Las Vegas area.
 double SaleTax::GetVegasState()
 {
  return vegas_state;
@@ -287,7 +289,7 @@ double SaleTax::GetVegasSpecial()
 }
 
 
-//Function for Phoenix
+//This get function will get the taxes for city, county, and state for Phoenix area.
 double SaleTax::GetPhxState()
 {
  return phx_state;
@@ -309,7 +311,7 @@ double SaleTax::GetPhxSpecial()
 }
 
 
-//This is the get function
+//This get function will get the item price.
 double SaleTax::GetItemPrice ()
 {
  return item_price;
