@@ -7,6 +7,8 @@ using namespace std;
 /*Roque Guerrero
   10/10/2017
   3.1 Lab - Conditions
+  This program will calculate the best phone plane for the user depending on what he is looking for.
+  Zachary Rust help me with the lab.
 */
 
 //input from the user
