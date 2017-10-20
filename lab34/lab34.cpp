@@ -15,9 +15,11 @@ int main() {
         cout << "Please enter a character: ";
         cin  >> ch;
          
-// check -- is it a letter??
+        while (ch != '1'){
+        // check -- is it a letter??
         if (ch >= 'A' && ch <= 'Z') {
                cout << "Yes, that is a uppercase letter." << endl;
+               
             }
     
         else if (ch >= 'a' && ch <= 'z') {
@@ -28,6 +30,11 @@ int main() {
             
             cout << "Not a letter" << endl;
         }
+        
+         cout << "Please enter a character, but to end program enter -1: ";
+         cin  >> ch;
+            }
+    
           return 0; 
     
 }
