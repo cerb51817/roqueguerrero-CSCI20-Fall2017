@@ -15,7 +15,7 @@ int main() {
         cout << "Please enter a character: ";
         cin  >> ch;
          
-        while (ch != '1'){
+        while (ch != '-'){
         // check -- is it a letter??
         if (ch >= 'A' && ch <= 'Z') {
                cout << "Yes, that is a uppercase letter." << endl;
