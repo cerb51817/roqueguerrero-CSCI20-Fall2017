@@ -11,36 +11,36 @@ using namespace std;
 */
 
 int main() {
-    int gross_wage = 0;
-    string first_name;
-    string last_name;
-    string filing_status;
-    double tax_withheld = 0;
-    double wage_after_tax = 0;
-    double tax_owed = 0;
-    double tax_refund = 0;
+    int gross_wage = 0; //This is the gross wage variable
+    string first_name; // This is the first name variable
+    string last_name; // This is the last name variable
+    string filing_status; // Filing status variable
+    double tax_withheld = 0; // tax witheld variable
+    double wage_after_tax = 0; // wage after tax variable
+    double tax_owed = 0; // tax owed variable
+    double tax_refund = 0; // tax refund variable
     
-    
+    // User input function for first name
     cout << "Enter First Name: ";
     cin >> first_name;
     cout << endl;
-    
+    // User input function for last name
     cout << "Enter Last Name: ";
     cin >> last_name;
     cout << endl;
-    
+    // User input function for filling status
     cout << "Filing Status: ";
     cin >> filing_status;
     cout << endl;
-    
+    //User Input function for gross wage
     cout << "Gross Wage: $";
     cin >> gross_wage;
     cout << endl;
-    
+    //User input function for tax withheld
     cout << "Tax withheld: $";
     cin >> tax_withheld;
     cout << endl;
-    
+    // if-else statement for filing status for a single person. This whos the amount of tax they will get depending on income.
     if ((gross_wage <= 0) && (filing_status == "Single" || filing_status == "single")){
         
         tax_owed = 0;
@@ -82,7 +82,7 @@ int main() {
         tax_refund = wage_after_tax * -1;
         
     }
-        
+        // This is a if-else statement for filing status Married. It will show how much tax they will get for there income.
         if ((gross_wage <= 0) && (filing_status == "Married" || filing_status == "married")){
         
         wage_after_tax = 0;
@@ -132,29 +132,46 @@ int main() {
         tax_refund = wage_after_tax * -1;
         
     }
+    // if statement for total taxed owed
+    if (wage_after_tax <= 0){
+        
+        wage_after_tax = 0;
+    }
+    // if statement for tax refund
+    if (tax_refund <= 0) {
+        
+        tax_refund = 0;
+        
+    }
     
-    
+    // output fucntions
     cout << "Name: " << first_name<< " " << last_name << endl;
     cout << "Total Gross Adjusted Income:$" << gross_wage << endl;
     cout << "Total tax owed:$" << wage_after_tax << endl;
     cout << first_name << " " << last_name << " is entitled to a REFUND of $" << tax_refund << endl;
     
-    /*
-    switch (tax_refund) {
-        case 0:
-        cout << first_name << " " << last_name << " will not get a refund." << endl;
-        break;
-        
-        default:
-        cout << first_name << " " << last_name << " is entitled to a REFUND of $" << tax_refund << endl;
-        
-    }
-    */
     return 0;
 }
 /*
 
-Your tax gross wage after tax is $441720
-Your tax withheld is $58280.5
+Name: Joe Vandal
+Total Gross Adjusted Income:$12100
+Total tax owed:$1310.12
+Joe Vandal is entitled to a REFUND of $0
+
+Name: Alfonso Haynes
+Total Gross Adjusted Income:$32351
+Total tax owed:$9795.88
+Alfonso Haynes is entitled to a REFUND of $0
+
+Name: Bridget Rowe
+Total Gross Adjusted Income:$88229
+Total tax owed:$64465.4
+Bridget Rowe is entitled to a REFUND of $0
+
+Name: Wendy Joseph
+Total Gross Adjusted Income:$73291
+Total tax owed:$46955.9
+Wendy Joseph is entitled to a REFUND of $0
 
 */
