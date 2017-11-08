@@ -47,6 +47,7 @@ void ItemList::Print() {
 
 int main() {
     const int size = 10;
+    int num_choice = 0;
     
 
     string names[size] = {"Beef", "Fish", "Chicken", "Corn", "Twinkies", "Rice", "Protein Bar", "Whey Protein", "Milk", "Chips"};
@@ -66,6 +67,8 @@ int main() {
         cout << i + 1 << ". ";
         goods[i].Print();
     }
+    cin >> num_choice;
+    cout << endl;
 }
 
 /*
