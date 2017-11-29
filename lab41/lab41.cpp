@@ -16,20 +16,23 @@ class ArrayTools {
     ArrayTools(int x[], int y);
     
     void Print();
-    void Find_sum();
-    void Find_max();
-    void Find_min();
-    void Search();
-    void Is_sorted();
+    int Find_sum();
+    int Find_max();
+    int Find_min();
+    int Num_even();
+    int Num_odd();
+    int Search();
+    bool Is_sorted();
    
     private:
     int num[];
+    int size;
     
 };
 
 ArrayTools::ArrayTools(int x[], int y){
   
-  for (int i = 0; i < y; i++){
+  for (int i = 0; i < size; i++){
     
     num[i] = x[i];
     
@@ -38,22 +41,29 @@ ArrayTools::ArrayTools(int x[], int y){
 }
 
 void ArrayTools::Print(){
-  for (int i = 0; i < 10; i++)
-  {
+  for (int i = 0; i < (size - 1); i++) {
     cout << num[i] << ", ";
   }
-  cout << endl;
+  cout << nums[size - 1] << endl;
 }
 
-void ArrayTools::Find_min(){
-  for (int i = 0; i < 10; i++) {
-    if (num[i]){
-    cout << num[i] << ", ";
+int ArrayTools::Find_min(int f, int l){
+  for (int i = f; i < last; i++) {
+    if (num[i] < m){
+    m = num[i];
     }
   }
-  cout << endl;
+  return m;
 }
-  
+int ArrayTools::Find_max(int f, int l){
+  int m = num[f];
+  for(int i = f; i < l; i++){
+    if(num[i] > m){
+      m = nums[i];
+    }
+  }
+  return m;
+}
 
 
 int main() {
@@ -67,7 +77,7 @@ int main() {
     ArrayTools a(myArray,SIZE);
     
     a.Print();
-    cout<<"Min: "<<a.Find_min(0, 4)<<endl;
+    cout<<"Min: "<< a.Find_min(0, 4) << endl;
     //cout<<"Max: "<<a.Find_max(5, 10)<<endl;
     //cout<<"Sum = "<<a.Find_sum()<<endl;
     //cout<<"Search 10"<<a.Search(10)<<endl;
