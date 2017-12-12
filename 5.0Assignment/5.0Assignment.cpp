@@ -7,11 +7,37 @@ using namespace std;
     Roque Guerrero
     12/11/2017
     5.0 Assignemnt
-    This program runs a simple poker game.
+    This program runs a simple poker game that the user plays agains the computer.
 */
+class UserPlayer {
+    
+    private:
+    int user_score;
+    
+    public:
+    
+};
 
-int main()
-{
+class ComputerPlayer {
+    private:
+    int computer_score;
+    
+    public:
+    
+    
+};
+
+class CardDealer {
+    
+    private:
+    string suit_names[4]={"Spades", "Diamonds", "Clubs", "Hearts"};
+    string rank_names[13]={"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    int deck_of_cards[52];
+    
+    public:
+    
+};
+int main(){
     srand(time(0));
     int deck_of_cards[52];
     int i;
@@ -47,21 +73,11 @@ int main()
 
     // shuffles the deck
     for(i = 0;i < 52;i++){
-        // generate a random index to swap with the card at index i.
+        // generate a random index 
         int j = rand() % 52;
         int temp = deck_of_cards[i];
         deck_of_cards[i] = deck_of_cards[j];
         deck_of_cards[j] = temp;
-    }
-
-    // Check first 5 cards for an ace
-    cout << endl;
-    for(i = 0;i < 5;i++){
-        int acerank = 0;
-        int currentCardRank = deck_of_cards[i]%13;
-        if(currentCardRank == acerank){
-            cout << "Got an ace!" << endl;
-        }
     }
 
     // Get the rank of the first 5 cards
