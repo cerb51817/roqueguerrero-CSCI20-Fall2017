@@ -3,63 +3,50 @@
 #include <string>
 #include <ctime>
 using namespace std;
+/*
+    Roque Guerrero
+    12/11/2017
+    5.0 Assignemnt
+    This program runs a simple poker game.
+*/
 
-class UserPlayer{
-    public:
-    private:
-    
-};
-
-class ComputerPlayer{
-    public:
-    private:
-    
-};
-
-class CardDealer{
-    public:
-    private:
-    
-};
-
-int main() {
+int main()
+{
     srand(time(0));
     int deck_of_cards[52];
-    char decision = 'd';
     int i;
-    bool playing = true;
-    string suitnames[4] = {"Spades", "Diamonds", "Clubs", "Hearts"};
-    string card_number[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    string suit_names[4]={"Spades", "Diamonds", "Clubs", "Hearts"};
+    string rank_names[13]={"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    char decision = 'd';
     
-    cout << "Do you want to play Poker?[Y/N]";
+    cout << "Would you like to play Poker?[Y][N]";
     cin >> decision;
     
-    switch(decision){
-        case'y':
-        case'Y':
-            cout << "Here are your cards!" << endl;
+    switch (decision){
+        case 'y':
+        case 'Y':
+            cout << "Here are your cards!";
         break;
-        
-        case'n':
-        case'N':
-            cout << "GoodBye!" << endl;
+            
+        case 'n':
+        case 'N':
+            cout << "Ok maybe next time! Goodbye!" << endl;
         break;
-        
+            
         default:
-            cout << "Sorry didn't understand your answer! ";
-            cout << "Do you want to play Poker?[Y/N]";
+            cout << "Sorry wrong answer!" << endl;
+            cout << "Would you like to play Poker?[Y][N]";
             cin >> decision;
-        
+        break;
     }
-    
-    // create a new deck, with cards in order, but unique
+
+    // create a new deck
     for(i = 0;i < 52; i++){
         deck_of_cards[i] = i;
     }
 
-    // shuffle the deck:
-    for(i = 0; i < 52; i++)
-    {
+    // shuffles the deck
+    for(i = 0;i < 52;i++){
         // generate a random index to swap with the card at index i.
         int j = rand() % 52;
         int temp = deck_of_cards[i];
@@ -67,18 +54,63 @@ int main() {
         deck_of_cards[j] = temp;
     }
 
-
-    // print all the cards
-    for(i = 0;i < 2; i++)
-    {
-        int suitnumber = deck_of_cards[i] / 13;
-        int rank = deck_of_cards[i] % 13;
-        cout << card_number[rank] << " of " << suitnames[suitnumber]<< endl;
+    // Check first 5 cards for an ace
+    cout << endl;
+    for(i = 0;i < 5;i++){
+        int acerank = 0;
+        int currentCardRank = deck_of_cards[i]%13;
+        if(currentCardRank == acerank){
+            cout << "Got an ace!" << endl;
+        }
     }
-    
-    cout << "would you like another card?";
-    cin >> decision;
 
-    
+    // Get the rank of the first 5 cards
+    int R[5]; // = {4, 7, 6, 3, 5}; // rank of the first 5 cards
+    int S[5];
+    for(i = 0;i < 5;i++){
+        R[i] = deck_of_cards[i]%13;
+        S[i] = deck_of_cards[i]/13;
+    }
+
+    // Sort the array
+    bool swapped = false;
+    do{
+        
+        swapped = false;
+        for(int i = 0; i < 4; i++){
+            if(R[i] > R[i + 1]){
+                int temp = R[i];
+                R[i] = R[i + 1];
+                R[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    }
+    while(swapped == true);
+
+    // print cards sorted by rank and suit
+    for(i = 0;i < 5;i++){
+        cout << rank_names[R[i]] << " of " << suit_names[S[i]]<< "\n";
+    }
+
+    // Check for a straight
+    if(R[1]==R[0]+1 && R[2]==R[1]+1 && R[3]==R[2]+1 && R[4]==R[3]+1){
+        cout << "You got a straight!" << endl;
+    }
+    // Check for a pair
+    else if(R[0] == R[1] || R[1]==R[2] || R[2]==R[3] || R[3]==R[4]){
+        cout << "You got a pair!" << endl;
+    }
+    //checks for three of a kind
+    else if(R[0] == R[1] || R[1]==R[2] || R[2]==R[3] || R[3]==R[4]){
+        cout << "You got three of a kind!" << endl;
+    } 
+    // Check for a flush (all the same suit)
+    else if(S[0] == S[1] && S[1]==S[2] && S[2]==S[3] && S[3]==S[4]){
+        cout << "You got a flush!" << endl;
+    } else {
+        cout << "No pair! You lose!" << endl;
+    }
+
     return 0;
 }
